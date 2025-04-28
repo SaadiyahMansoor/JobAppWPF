@@ -1,0 +1,61 @@
+﻿<Window x:Class="JobApplicationWPF2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JobApplicationWPF2"
+        mc:Ignorable="d"
+       Title="MainWindow" Height="779" Width="400" Background="Black">
+
+    <StackPanel Margin = "20,20,20,22" Background="#FF4A7BFF">
+        <TextBlock x:Name="Heading" Text="Job Application Form" FontSize="24" FontWeight="Bold" FontFamily="Cambria Math" HorizontalAlignment="Center" Margin="10
+                "></TextBlock>
+
+        <Canvas x:Name="PersonalInfoCanvas" Height="135" Margin="20">
+
+            <TextBlock Text="Applicant Full Name:" />
+            <TextBox x:Name="txtFullName" Width="200" HorizontalAlignment="Center" Canvas.Top="16" VerticalAlignment="Top" />
+
+            <TextBlock Text="Role:" HorizontalAlignment="Center" Canvas.Top="42" VerticalAlignment="Top" />
+            <TextBox x:Name="txtRole" Width="200" HorizontalAlignment="Center" Canvas.Top="58" VerticalAlignment="Top" />
+
+            <TextBlock Text="Expected Salary:" HorizontalAlignment="Center" Canvas.Top="86" VerticalAlignment="Top" />
+            <TextBox x:Name="txtExpectedSalary" Width="200" HorizontalAlignment="Center" Canvas.Top="102" VerticalAlignment="Top" />
+
+        </Canvas>
+
+        <Canvas x:Name="SkillsCanvas" Height="50" Margin="20,-10,20,10" Background="#FFEAC927">
+            <TextBlock Text="Skills:" HorizontalAlignment="Center" Canvas.Left="10" VerticalAlignment="Top" FontWeight="Bold" />
+
+            <WrapPanel Canvas.Left="10" Canvas.Top="25" Width="166" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <CheckBox x:Name="chkCSharp"  Content="C#" Canvas.Left="19" Canvas.Top="25" Margin="0,0,5,0"/>
+                <CheckBox x:Name="chkPython" Content="Python" Canvas.Left="124" Canvas.Top="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <CheckBox x:Name="chkSQL" Content="SQL" Canvas.Left="228" Canvas.Top="25"/>
+            </WrapPanel>
+        </Canvas>
+        <Canvas x:Name="ButtonCanvas"  Height ="34" Width="116" RenderTransformOrigin="0.5,0.5" Margin="0,137,0,0">
+            <Button x:Name="btnSubmit" Content="Submit Application" Height="36" Width="176" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="23" RenderTransformOrigin="0.5,0.5" Click="btnSubmit_Click" Canvas.Left="-30"/>
+        </Canvas>
+
+
+        <Canvas x:Name="AvailabilityCanvas" Height="50" Background="#FFFFB428" Margin="20,-257,20,8">
+            <TextBlock Text="Availability:" HorizontalAlignment="Center" Canvas.Left="10" VerticalAlignment="Top" FontWeight="Bold" />
+            <ComboBox x:Name="cmbAvailability" Width="186" HorizontalAlignment="Left" Canvas.Top="21" VerticalAlignment="Center" Canvas.Left="10">
+                <ComboBoxItem Content="Immediate" />
+                <ComboBoxItem Content="1 Week Notice" />
+                <ComboBoxItem Content="2 Month Notice" />
+            </ComboBox>
+        </Canvas>
+
+        <Canvas x:Name="PreferredCanvas" Height="50" Margin="20,-123,20,0" Background="#FF1FDDCE" Width="315">
+            <TextBlock Text="Preferred Work Type:" HorizontalAlignment="Center" Canvas.Left="10" VerticalAlignment="Top" FontWeight="Bold" ></TextBlock>
+            <RadioButton x:Name="radRemote" Content="Remote" GroupName="WorkType" FontSize="14" Canvas.Left="10" Canvas.Top="20"  ></RadioButton>
+            <RadioButton x:Name="radOnSite" Content="On-Site" GroupName="WorkType" FontSize="14" Canvas.Left="90" Canvas.Top="20"  ></RadioButton>
+        </Canvas>
+
+        <TextBlock x:Name="InfoOutput"  FontSize="15" Width="228" Height="184" Margin="0,51,0,0" HorizontalAlignment="Center"/>
+
+
+    </StackPanel>
+
+</Window>
